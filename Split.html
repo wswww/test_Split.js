@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Split.js</title>
+    <style>
+        /* 大盒子 */
+        .api {
+            height: 500px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        /* 缩放的元素 */
+
+        .split {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        /* 拖动工具 开始 */
+
+        .gutter {
+            background-color: #eee;
+        }
+
+        .gutter.gutter-horizontal {
+            cursor: ew-resize;
+        }
+
+        .gutter.gutter-vertical {
+            cursor: ns-resize;
+        }
+
+        /* 拖动工具 结束 */
+
+        /* 设置高度和浮动 */
+
+        .split.split-horizontal,
+        .gutter.gutter-horizontal {
+            height: 100%;
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="api">
+        <div id="one" class="split split-horizontal">
+            <p>1111111</p>
+        </div>
+        <div id="two" class="split split-horizontal">
+            <p>2222222</p>
+        </div>
+    </div>
+</body>
+<script src="./split.js"></script>
+<script>
+    var split = Split(['#one', '#two'], {
+        sizes: [50, 50],
+        minSize: 0,
+    });
+</script>
+
+</html>
